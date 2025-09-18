@@ -18,26 +18,40 @@ const bgColor = {
 }
 
 const CharDance = (props) => {
-  let link = `https://cdn.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${props.char}.webm?undefined`;
+  let link = `https://cdn.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${props.char}.webm`;
+
   const Char = () => {
-  return (
-    <video className='char-img' playsInline autoPlay loop preload="auto" onClick={props.onClick}>
-        <source type="video/webm" src={link} alt="#" className='char-src'></source>
+    return (
+      <video
+        className='char-img'
+        playsInline
+        autoPlay
+        loop
+        muted // ✅ Это нужно для автозапуска
+        preload="auto"
+        onClick={props.onClick}
+        width="180" // ✅ Задай ширину или стиль
+        height="auto"
+      >
+        <source src={link} type="video/webm" />
+        Your browser does not support the video tag.
       </video>
-  )
-}
+    );
+  };
+
   return (
     <div>
       <div className='chardance'>
-        <Char/>
-        <Char/>
-        <Char/>
-        <Char/>
-        <Char/>
+        <Char />
+        <Char />
+        <Char />
+        <Char />
+        <Char />
       </div>
     </div>
-  )
-}
+  );
+};
+
 const Header = () => {
   return(
     <header className='header' style={bgColor}>
