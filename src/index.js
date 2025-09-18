@@ -102,7 +102,7 @@ const app = (
     <div className='wrapper'>
       <Header/>
       <Main/>
-      <CharDance char='witch_doctor' onClick={sayAlert}/>
+      <CharDance char='phantom_lancer' onClick={sayAlert}/>
       <Footer/> 
     </div>
   </div>
